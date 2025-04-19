@@ -1,4 +1,14 @@
 import matplotlib.pyplot as plt
+import pandas as pd
+# plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签\n
+plt.rcParams['font.family'] = 'Times New Roman'  # 设置字体为 Times New Roman
+plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
+
+df_cjh = pd.read_csv('./papers-cjh.csv')
+df_cjh_ai = pd.read_csv('./papers-cjh-ai.csv')
+df_cjh_chinese = pd.read_csv('./papers-cjh-chinese.csv')
+
+import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 
 fig, ax = plt.subplots(figsize=(10,8))
@@ -42,4 +52,4 @@ ax.axvline(2020,linewidth=1,linestyle='-.',color='b')
 #             arrowprops=dict(facecolor='black', shrink=0.05),
 #             )
 
-plt.savefig("paper-cjh-ai-chinese-all-gai20250419.png", dpi=600, bbox_inches='tight')
+plt.savefig("paper-cjh-ai-chinese-all-gai20250419-times.png", dpi=600, bbox_inches='tight')
